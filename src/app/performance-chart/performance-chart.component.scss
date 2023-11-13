@@ -1,0 +1,27 @@
+.border {
+    border: 1px solid gray;
+}
+
+.box {
+    margin: 1rem;
+}
+
+.increase {
+    border-color: #8EBF78;
+    color: #8EBF78;
+}
+
+.decrease {
+    border-color: #800000;
+    color: #800000;
+}
+
+.indicator {
+    &.increase:before {
+        content: "\2191";
+    }
+
+    &.decrease:before {
+        content: "\2193";
+    }
+}

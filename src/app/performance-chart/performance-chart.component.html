@@ -1,0 +1,9 @@
+<div style="display: block;" *ngIf="chartData$ | async as chartData" class="box border" [ngClass]="chartData.cssClass">
+    <span class="indicator" [ngClass]="chartData.cssClass"></span>
+    <canvas baseChart width="200" height="200"
+        [type]="'line'"
+        [data]="chartData"
+        [options]="lineChartOptions"
+        [legend]="true">
+    </canvas>
+</div>

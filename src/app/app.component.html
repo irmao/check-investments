@@ -1,0 +1,12 @@
+<div class="token-area">
+  <app-token-store></app-token-store>
+</div>
+
+<div *ngIf="hasTokenSet$ | async" class="charts-area">
+  <div *ngFor="let actionCode of actionCodes; let i = index;" class="action-row">
+    <div *ngFor="let timePeriod of timePeriods; let j = index;" class="time-period-entry">
+      <span *ngIf="i == 0">{{ timePeriodLabels[timePeriod] }}</span> <!-- only first row -->
+      <app-performance-chart [parameters]="parameters[i][j]"></app-performance-chart>  
+    </div>
+  </div>  
+</div>
