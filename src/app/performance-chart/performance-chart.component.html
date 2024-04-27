@@ -6,4 +6,6 @@
         [options]="lineChartOptions"
         [legend]="true">
     </canvas>
+
+    <span> {{ chartData.yield ? (chartData.yield | number : '1.2-2') : '-' }} </span>
 </div>

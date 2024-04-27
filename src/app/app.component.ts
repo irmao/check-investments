@@ -27,10 +27,14 @@ export class AppComponent implements OnInit, OnDestroy {
     'BRCO11',
     'BTLG11',
     'CPTS11',
-    'GOGL34',
     'KNCR11',
     'KNSC11',
-    'RBRR11'
+    'PVBI11',
+    'RBRR11',
+    'XPML11',
+    'GOGL34',
+    'BITH11',
+    'BOVA11'
   ];
 
   timePeriods: ChartPeriodEnum[] = [

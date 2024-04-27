@@ -1,3 +1,8 @@
 import { ChartConfiguration } from "chart.js";
 
-export type PerformanceChartDataType = ChartConfiguration<'line'>['data'] & { cssClass: string };
+type CustomData = {
+    cssClass: string,
+    yield: number | null
+};
+
+export type PerformanceChartDataType = ChartConfiguration<'line'>['data'] & CustomData;

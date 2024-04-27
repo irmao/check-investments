@@ -7,6 +7,7 @@ import { NuinvestChartItem } from '../../nuinvest/nuinvest-chart-item.model';
 import { Observable, Subject, last, of, switchMap, takeUntil, throwError } from 'rxjs';
 import { NuinvestRequest } from '../../nuinvest/nuinvest-request.model';
 import { PerformanceChartDataType } from './performance-chart-data-type.adapter';
+import { NuinvestSeriesItem } from '../../nuinvest/nuinvest-series-item.model';
 
 @Component({
   selector: 'app-performance-chart',
@@ -57,6 +58,7 @@ export class PerformanceChartComponent implements OnDestroy {
   createChartData(item: NuinvestChartItem): PerformanceChartDataType {
     return {
       cssClass: this.calculateClass(item),
+      yield: this.calculateYield(item.series),
       labels: item.series.map(s => this.formatDate(s.dateTime)),
       datasets: [{
         data: item.series.map(s => s.value),
@@ -83,6 +85,14 @@ export class PerformanceChartComponent implements OnDestroy {
     }
 
     return '';
+  }
+
+  calculateYield(item: NuinvestSeriesItem[]): number | null {
+    const size = item.length;
+
+    return size > 1
+      ? 100 * (item[size-1].value / item[0].value) - 100
+      : null;
   }
 
   formatDate(dateTimeStr: string) {
