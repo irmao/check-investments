@@ -1,0 +1,3 @@
+<select [(ngModel)]="selectedOption" (ngModelChange)="onSelectChange()">
+  <option *ngFor="let opt of options; let i = index;" [value]="i"> {{opt.label}} </option>
+</select>

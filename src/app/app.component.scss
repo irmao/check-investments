@@ -2,25 +2,6 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.action-row {
-    display: flex;
-    align-items: center;
-}
-
-.flex-column {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.font-sm {
-    font-size: 12px;
-}
-
-.time-period-entry {
-    text-align: center;
-}
-
 .token-area,
 .charts-area {
     margin: 1.5rem;

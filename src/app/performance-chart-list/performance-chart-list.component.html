@@ -1,0 +1,10 @@
+<div *ngFor="let actionListItem of actionList.listItems; let i = index;" class="action-row">
+  <div class="flex-column font-sm" *ngIf="actionListItem.buyDate">
+    <span>Bought at</span>
+    <span>{{ actionListItem.buyDate | date: 'dd/MMM/yyyy' }}</span>
+  </div>
+  <div *ngFor="let timePeriod of timePeriods; let j = index;" class="time-period-entry">
+    <span *ngIf="i == 0">{{ timePeriodLabels[timePeriod] }}</span> <!-- only first row -->
+    <app-performance-chart [parameters]="parameters[i][j]"></app-performance-chart>
+  </div>
+</div>

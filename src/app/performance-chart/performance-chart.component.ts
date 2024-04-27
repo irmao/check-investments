@@ -2,12 +2,12 @@ import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgChartsModule } from 'ng2-charts';
 import { ChartOptions } from 'chart.js';
-import { NuinvestService } from '../../nuinvest/nuinvest.service';
-import { NuinvestChartItem } from '../../nuinvest/nuinvest-chart-item.model';
 import { Observable, Subject, last, of, switchMap, takeUntil, throwError } from 'rxjs';
-import { NuinvestRequest } from '../../nuinvest/nuinvest-request.model';
 import { PerformanceChartDataType } from './performance-chart-data-type.adapter';
-import { NuinvestSeriesItem } from '../../nuinvest/nuinvest-series-item.model';
+import { NuinvestRequest } from '../nuinvest/nuinvest-request.model';
+import { NuinvestService } from '../nuinvest/nuinvest.service';
+import { NuinvestChartItem } from '../nuinvest/nuinvest-chart-item.model';
+import { NuinvestSeriesItem } from '../nuinvest/nuinvest-series-item.model';
 
 @Component({
   selector: 'app-performance-chart',

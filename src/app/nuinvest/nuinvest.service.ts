@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { NuinvestResponse } from './nuinvest-response.model';
 import { NuinvestRequest } from './nuinvest-request.model';
-import { StorageService } from '../app/token-store/storage.service';
+import { StorageService } from '../token-store/storage.service';
 
 @Injectable({
   providedIn: 'root',

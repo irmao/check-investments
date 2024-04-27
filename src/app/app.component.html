@@ -3,14 +3,6 @@
 </div>
 
 <div *ngIf="hasTokenSet$ | async" class="charts-area">
-  <div *ngFor="let historyItem of actionHistory.historyItems; let i = index;" class="action-row">
-    <div class="flex-column font-sm">
-      <span>Bought at</span>
-      <span>{{ historyItem.buyDate | date: 'dd/MMM/yyyy' }}</span>
-    </div>
-    <div *ngFor="let timePeriod of timePeriods; let j = index;" class="time-period-entry">
-      <span *ngIf="i == 0">{{ timePeriodLabels[timePeriod] }}</span> <!-- only first row -->
-      <app-performance-chart [parameters]="parameters[i][j]"></app-performance-chart>
-    </div>
-  </div>
+  <app-action-repository-selector (selectedOptionChange)="onRepositoryChange($event)"></app-action-repository-selector>
+  <app-performance-chart-list [actionList]="actionList"></app-performance-chart-list>
 </div>
