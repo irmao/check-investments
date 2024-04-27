@@ -1,0 +1,48 @@
+{
+    "historyItems": [
+        {
+            "actionCode": "BRCO11",
+            "buyDate": "2022-01-31"
+        },
+        {
+            "actionCode": "BTLG11",
+            "buyDate": "2022-01-14"
+        },
+        {
+            "actionCode": "CPTS11",
+            "buyDate": "2021-06-11"
+        },
+        {
+            "actionCode": "KNCR11",
+            "buyDate": "2023-08-31"
+        },
+        {
+            "actionCode": "KNSC11",
+            "buyDate": "2021-06-30"
+        },
+        {
+            "actionCode": "PVBI11",
+            "buyDate": "2023-12-28"
+        },
+        {
+            "actionCode": "RBRR11",
+            "buyDate": "2021-06-10"
+        },
+        {
+            "actionCode": "XPML11",
+            "buyDate": "2023-12-15"
+        },
+        {
+            "actionCode": "GOGL34",
+            "buyDate": "2023-05-31"
+        },
+        {
+            "actionCode": "BITH11",
+            "buyDate": "2023-12-11"
+        },
+        {
+            "actionCode": "BOVA11",
+            "buyDate": "2022-01-01"
+        }
+    ]
+}

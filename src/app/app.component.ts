@@ -5,7 +5,8 @@ import { PerformanceChartComponent } from './performance-chart/performance-chart
 import { ChartPeriodEnum, NuinvestRequest } from '../nuinvest/nuinvest-request.model';
 import { StorageService } from './token-store/storage.service';
 import { TokenStoreComponent } from './token-store/token-store.component';
-import { Observable, Subscription, tap } from 'rxjs';
+import { ActionHistory } from './action-history/action-history.model';
+import actionHistoryData from '../assets/action-history-data.json';
 
 @Component({
   selector: 'app-root',
@@ -23,19 +24,7 @@ export class AppComponent implements OnInit, OnDestroy {
     [ChartPeriodEnum.ONE_YEAR]: 'One Year',
   };
 
-  actionCodes: string[] = [
-    'BRCO11',
-    'BTLG11',
-    'CPTS11',
-    'KNCR11',
-    'KNSC11',
-    'PVBI11',
-    'RBRR11',
-    'XPML11',
-    'GOGL34',
-    'BITH11',
-    'BOVA11'
-  ];
+  actionHistory: ActionHistory = new ActionHistory();
 
   timePeriods: ChartPeriodEnum[] = [
     ChartPeriodEnum.ONE_MONTH,
@@ -51,11 +40,13 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.parameters = this.actionCodes.map(actionCode => 
-      this.timePeriods.map(timePeriod =>({
-          actionCode: actionCode,
-          chartPeriod: timePeriod
-        })
+    this.actionHistory = Object.assign(new ActionHistory(), actionHistoryData);
+
+    this.parameters = this.actionHistory.historyItems.map(historyItem =>
+      this.timePeriods.map(timePeriod => ({
+        actionCode: historyItem.actionCode,
+        chartPeriod: timePeriod
+      })
       )
     );
 

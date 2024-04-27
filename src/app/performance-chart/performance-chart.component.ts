@@ -1,7 +1,7 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgChartsModule } from 'ng2-charts';
-import { ChartConfiguration, ChartOptions } from 'chart.js';
+import { ChartOptions } from 'chart.js';
 import { NuinvestService } from '../../nuinvest/nuinvest.service';
 import { NuinvestChartItem } from '../../nuinvest/nuinvest-chart-item.model';
 import { Observable, Subject, last, of, switchMap, takeUntil, throwError } from 'rxjs';
